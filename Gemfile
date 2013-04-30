@@ -8,7 +8,10 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 group :development do
- gem 'rspec-rails'
+  gem 'rspec-rails'
+  gem 'annotate'
+  gem 'guard-rspec'
+  gem 'guard-spork'
 end
 
 group :test do
@@ -18,6 +21,9 @@ group :test do
   gem 'capybara'
   gem 'fabrication'
   gem 'simplecov', :require => false
+  # for guard-rspec
+  gem 'rb-inotify'
+  gem 'libnotify'
 end
 
 # Gems used only for assets and not required
