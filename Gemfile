@@ -17,6 +17,7 @@ group :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'fabrication'
+  gem 'simplecov', :require => false
 end
 
 # Gems used only for assets and not required
