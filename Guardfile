@@ -34,7 +34,7 @@ guard 'rspec', :all_after_pass => false, :cli => '--drb' do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
-guard 'annotate' do
+guard 'annotate', :routes => true do
   watch( 'db/schema.rb' )
 
   # Uncomment the following line if you also want to run annotate anytime
@@ -43,5 +43,5 @@ guard 'annotate' do
 
   # Uncomment the following line if you are running routes annotation
   # with the ":routes => true" option
-  #watch( 'config/routes.rb' )
+  watch( 'config/routes.rb' )
 end
