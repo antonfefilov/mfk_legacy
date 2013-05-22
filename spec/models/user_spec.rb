@@ -13,7 +13,7 @@
 require 'spec_helper'
 
 describe User do
-  let (:user) { Fabricate.build(:user, username: "Alex", email: "alex@example.com")}
+  let (:user) { Fabricate.build(:user, username: "Alex", email: "alex@example.com", password_digest: "anydigest")}
   subject { user }
 
   it { should respond_to(:username) } 
@@ -30,6 +30,11 @@ describe User do
   describe "when email is not present" do
     before { user.email = ""}
     it {should_not be_valid}
+  end
+
+  describe "when password_digest is not present" do 
+    before { user.password_digest = "" }
+    it { should_not be_valid }
   end
 
   describe "when username format is invalid" do
