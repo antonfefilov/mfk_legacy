@@ -4,7 +4,7 @@ Mfk::Application.routes.draw do
   end
 end
 #== Route Map
-# Generated on 03 May 2013 23:32
+# Generated on 22 May 2013 08:41
 #
 #                 POST   /admin/users(.:format)          admin/users#create
 #  new_admin_user GET    /admin/users/new(.:format)      admin/users#new
