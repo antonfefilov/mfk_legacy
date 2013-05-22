@@ -20,6 +20,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'fabrication'
   gem 'simplecov', :require => false
   # for guard-rspec
