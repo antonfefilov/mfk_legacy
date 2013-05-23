@@ -18,7 +18,18 @@
       <div class="navbar-inner">
         <div class="container">
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">Вы вошли как</p>  
+            <% if current_user -%>
+              <p class="navbar-text pull-right">
+                <%= link_to "Выйти", logout_url %>
+              </p>  
+              <p class="navbar-text pull-right">
+                Вы вошли как: <%= current_user.username %> 
+              </p> 
+            <% else %>
+              <p class="navbar-text pull-right">
+                <%= link_to "Войти", login_url %>
+              </p>  
+            <% end -%>
           </div>  
         </div>
       </div>  
