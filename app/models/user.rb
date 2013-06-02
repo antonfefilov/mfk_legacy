@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_USERNAME_REGEX = /\A[A-Za-z][A-Za-z0-9._-]{2,19}\z/
   
+  has_and_belongs_to_many :roles  
+
   has_secure_password
 
   validates :username, presence: true, format: { with: VALID_USERNAME_REGEX },

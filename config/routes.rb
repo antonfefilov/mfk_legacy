@@ -9,7 +9,7 @@ Mfk::Application.routes.draw do
   end
 end
 #== Route Map
-# Generated on 24 May 2013 00:38
+# Generated on 03 Jun 2013 01:20
 #
 #          logout GET    /logout(.:format)               sessions#destroy
 #        sessions GET    /sessions(.:format)             sessions#index
