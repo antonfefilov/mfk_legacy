@@ -2,6 +2,13 @@ require 'spec_helper'
 
 describe Admin::UsersController do
 
+  before (:each) do
+    admin_user = Fabricate(:user, username: "Haul", email: "lofdur@gmail.com", password: "q1w2e3")
+    admin_role = Fabricate(:role, name: "admin")
+    admin_user.roles << admin_role
+    session[:user_id] = admin_user.id
+  end
+
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'

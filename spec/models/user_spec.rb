@@ -19,6 +19,7 @@ describe User do
   it { should respond_to(:username) } 
   it { should respond_to(:email) } 
   it { should respond_to(:password_digest) }
+  it { should respond_to(:has_role?)}
 
   it { should be_valid }
 
@@ -92,4 +93,13 @@ describe User do
     end
     it { should_not be_valid }
   end
+
+  describe "#has_role?" do
+    specify do
+      role = Fabricate(:role, name: "anyrole")
+      user.roles << role 
+      user.has_role?("anyrole").should be_true
+    end
+  end
+
 end

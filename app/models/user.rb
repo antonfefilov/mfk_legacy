@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false } 
 
   before_save { |user| user.email = email.downcase }
+
+  def has_role?(role) 
+    self.roles.include? Role.find_by_name(role)
+  end
 end
